@@ -8,7 +8,7 @@ model = "MULLER2022"
 saving_path = Path("./coastlines_data/", model)
 Path(saving_path).mkdir(parents=True, exist_ok=True)
 
-for year in range(0, 73):
+for year in range(0, 1001):
     # download the data
     url = url.format(time = str(year), model = model)
     coastline_data = requests.get(url).text
