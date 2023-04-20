@@ -8,11 +8,11 @@ model = "MULLER2022"
 saving_path = Path("./coastlines_data/", model)
 Path(saving_path).mkdir(parents=True, exist_ok=True)
 
-for year in range(213, 1001):
+for year in range(918, 1001):
     # download the data
     url = url.format(time = str(year), model = model)
     coastline_data = requests.get(url).text
-    coastline_file_name = str(year) + "ma_coastlines" + ".geojson"
+    coastline_file_name = str(year) + "ma" + ".geojson"
     coastline_file_path = Path(saving_path, coastline_file_name)
     # save the data
     with open(coastline_file_path, 'w') as f:
